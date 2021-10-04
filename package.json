@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "yarn parcel build index.js --no-cache --no-optimize",
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "@deck.gl/core": "8.5.3",
+    "parcel": "2.0.0-nightly.852",
+    "patch-package": "^6.4.7",
+    "probe.gl": "^3.4.1"
+  }
+}
