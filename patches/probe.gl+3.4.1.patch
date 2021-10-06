@@ -451,11 +451,12 @@ index 50911d2..3f37006 100644
 -//# sourceMappingURL=log.js.map
 \ No newline at end of file
 diff --git a/node_modules/probe.gl/dist/esm/utils/hi-res-timestamp.js b/node_modules/probe.gl/dist/esm/utils/hi-res-timestamp.js
-index 211dd41..fa6987b 100644
+index 211dd41..e6a13b1 100644
 --- a/node_modules/probe.gl/dist/esm/utils/hi-res-timestamp.js
 +++ b/node_modules/probe.gl/dist/esm/utils/hi-res-timestamp.js
 @@ -1,16 +1,4 @@
- import { window, process, isBrowser } from './globals';
+-import { window, process, isBrowser } from './globals';
++import { window } from "./globals";
  export default function getHiResTimestamp() {
 -  let timestamp;
 -
@@ -471,6 +472,5 @@ index 211dd41..fa6987b 100644
 -  return timestamp;
 +  return window;
  }
-\ No newline at end of file
 -//# sourceMappingURL=hi-res-timestamp.js.map
 \ No newline at end of file
