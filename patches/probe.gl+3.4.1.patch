@@ -1,0 +1,71 @@
+diff --git a/node_modules/probe.gl/dist/esm/index.js b/node_modules/probe.gl/dist/esm/index.js
+index dd26fc0..cd24ba8 100644
+--- a/node_modules/probe.gl/dist/esm/index.js
++++ b/node_modules/probe.gl/dist/esm/index.js
+@@ -1,20 +1,20 @@
+-import './init';
+-import { default as Log } from './lib/log';
+-export { VERSION } from './utils/globals';
+-export { self, window, global, document, process, console } from './env/globals';
+-export { default as isBrowser, isBrowserMainThread } from './env/is-browser';
+-export { default as getBrowser, isMobile } from './env/get-browser';
+-export { default as isElectron } from './env/is-electron';
+-export { default as assert } from './utils/assert';
+-export { default as Log } from './lib/log';
+-export { COLOR } from './utils/color';
+-export default new Log({
+-  id: 'probe.gl'
+-});
+-export { addColor } from './utils/color';
+-export { leftPad, rightPad } from './utils/formatters';
+-export { autobind } from './utils/autobind';
+-export { default as LocalStorage } from './utils/local-storage';
+-export { default as getHiResTimestamp } from './utils/hi-res-timestamp';
+-export { Stats, Stat } from '@probe.gl/stats';
++// import './init';
++// import { default as Log } from './lib/log';
++// export { VERSION } from './utils/globals';
++export { console } from "./env/globals";
++// export { default as isBrowser, isBrowserMainThread } from './env/is-browser';
++// export { default as getBrowser, isMobile } from './env/get-browser';
++// export { default as isElectron } from './env/is-electron';
++// export { default as assert } from './utils/assert';
++export { default as Log } from "./lib/log";
++// export { COLOR } from './utils/color';
++// export default new Log({
++//   id: 'probe.gl'
++// });
++// export { addColor } from './utils/color';
++// export { leftPad, rightPad } from './utils/formatters';
++// export { autobind } from './utils/autobind';
++// export { default as LocalStorage } from './utils/local-storage';
++// export { default as getHiResTimestamp } from './utils/hi-res-timestamp';
++// export { Stats, Stat } from '@probe.gl/stats';
+ //# sourceMappingURL=index.js.map
+diff --git a/node_modules/probe.gl/dist/esm/lib/log.js b/node_modules/probe.gl/dist/esm/lib/log.js
+index 50911d2..19b4aae 100644
+--- a/node_modules/probe.gl/dist/esm/lib/log.js
++++ b/node_modules/probe.gl/dist/esm/lib/log.js
+@@ -1,9 +1,9 @@
+ import { VERSION, isBrowser } from '../utils/globals';
+ import LocalStorage from '../utils/local-storage';
+-import { formatImage, formatTime, leftPad } from '../utils/formatters';
+-import { addColor } from '../utils/color';
+-import { autobind } from '../utils/autobind';
+-import assert from '../utils/assert';
++// import { formatImage, formatTime, leftPad } from '../utils/formatters';
++// import { addColor } from '../utils/color';
++// import { autobind } from '../utils/autobind';
++// import assert from '../utils/assert';
+ import getHiResTimestamp from '../utils/hi-res-timestamp';
+ const originalConsole = {
+   debug: isBrowser ? console.debug || console.log : console.log,
+@@ -363,7 +363,7 @@ function logImageInNode({
+   let asciify = null;
+ 
+   try {
+-    asciify = module.require('asciify-image');
++    asciify = require('asciify-image');
+   } catch (error) {}
+ 
+   if (asciify) {
