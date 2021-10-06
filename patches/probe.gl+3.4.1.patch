@@ -1,3 +1,25 @@
+diff --git a/node_modules/probe.gl/dist/esm/env/globals.js b/node_modules/probe.gl/dist/esm/env/globals.js
+index 602e4dd..0e3123e 100644
+--- a/node_modules/probe.gl/dist/esm/env/globals.js
++++ b/node_modules/probe.gl/dist/esm/env/globals.js
+@@ -1,15 +1 @@
+-const globals = {
+-  self: typeof self !== 'undefined' && self,
+-  window: typeof window !== 'undefined' && window,
+-  global: typeof global !== 'undefined' && global,
+-  document: typeof document !== 'undefined' && document,
+-  process: typeof process === 'object' && process
+-};
+-const self_ = globals.self || globals.window || globals.global;
+-const window_ = globals.window || globals.self || globals.global;
+-const global_ = globals.global || globals.self || globals.window;
+-const document_ = globals.document || {};
+-const process_ = globals.process || {};
+-const console_ = console;
+-export { self_ as self, window_ as window, global_ as global, document_ as document, process_ as process, console_ as console };
+-//# sourceMappingURL=globals.js.map
+\ No newline at end of file
++export const window = "abc";
 diff --git a/node_modules/probe.gl/dist/esm/index.js b/node_modules/probe.gl/dist/esm/index.js
 index dd26fc0..de9abc5 100644
 --- a/node_modules/probe.gl/dist/esm/index.js
@@ -450,6 +472,20 @@ index 50911d2..3f37006 100644
  }
 -//# sourceMappingURL=log.js.map
 \ No newline at end of file
+diff --git a/node_modules/probe.gl/dist/esm/utils/globals.js b/node_modules/probe.gl/dist/esm/utils/globals.js
+index 53f7aba..d2dddad 100644
+--- a/node_modules/probe.gl/dist/esm/utils/globals.js
++++ b/node_modules/probe.gl/dist/esm/utils/globals.js
+@@ -1,5 +1,5 @@
+-import checkIfBrowser from '../env/is-browser';
+-export { self, window, global, document, process, console } from '../env/globals';
+-export const VERSION = typeof __VERSION__ !== 'undefined' ? __VERSION__ : 'untranspiled source';
+-export const isBrowser = checkIfBrowser();
++// import checkIfBrowser from '../env/is-browser';
++export { window } from "../env/globals";
++export const VERSION = "abc";
++// export const isBrowser = checkIfBrowser();
+ //# sourceMappingURL=globals.js.map
 diff --git a/node_modules/probe.gl/dist/esm/utils/hi-res-timestamp.js b/node_modules/probe.gl/dist/esm/utils/hi-res-timestamp.js
 index 211dd41..e6a13b1 100644
 --- a/node_modules/probe.gl/dist/esm/utils/hi-res-timestamp.js
